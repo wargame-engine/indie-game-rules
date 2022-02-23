@@ -1,0 +1,8 @@
+{
+  "modules": {
+    "fantasy": {
+      "name": "Fantasy",
+      "url": "https://raw.githubusercontent.com/wargame-engine/quest-forge-modules/main/fantasy.json"
+    }
+  }
+}
