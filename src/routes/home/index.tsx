@@ -1,11 +1,11 @@
 import NewsIcon from '@mui/icons-material/Newspaper';
-import StraightenIcon from '@mui/icons-material/Straighten';
 import { Box, CardActionArea, Container, Grid, Stack } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import logo from 'assets/images/logo_large.png';
 import splash from 'assets/images/splash.png';
+import DiceIcon from 'mdi-material-ui/Dice6';
 import Discord from 'mdi-material-ui/Discord';
 import React from 'react';
 import { useNavigate } from "react-router-dom";
@@ -17,7 +17,8 @@ type CardType = {
   text: string,
   to?: string,
   toAbs?: string,
-  color: any
+  color: any,
+  disabled?: boolean
 };
 
 export default function Home() {
@@ -30,10 +31,11 @@ export default function Home() {
       text: "View updates and information about Indie Game Rules",
       to: "/news",
       color: colors.brown.import[500],
+      disabled: true
     },
     {
       name: "Games",
-      icon: <StraightenIcon style={{ fontSize: iconSize }} />,
+      icon: <DiceIcon style={{ fontSize: iconSize }} />,
       text: "Browse our published games and give them a try.",
       to: "/games",
       color: colors.brown.import[500],
@@ -75,6 +77,7 @@ export default function Home() {
             <Grid item xs={4} key={index}>
               <Card>
                 <CardActionArea
+                  disabled={card.disabled}
                   onClick={() =>
                     card.toAbs
                       ? window.open(card.toAbs, "_blank")

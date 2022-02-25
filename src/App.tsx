@@ -12,7 +12,7 @@ import {
   Navigate, Route, Routes
 } from "react-router-dom";
 import { getColor } from 'utils/colors';
-import { Home } from 'routes';
+import { Home, Games } from 'routes';
 import './App.css';
 
 function App() {
@@ -122,6 +122,8 @@ function App() {
               <Box sx={{ ml: fullScreen ? '250px' : '0', mb: 2 }}>
                 <Appdrawer />
                 <Routes>
+                  <Route path="/games/:id" element={<Games />} />
+                  <Route path="/games" element={<Games />} />
                   <Route path="/" element={<Home />} />
                   <Route path="*" element={<Navigate replace to="/" />} />
                 </Routes>

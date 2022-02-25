@@ -1,12 +1,13 @@
 import { ExpandLess, ExpandMore, Home } from '@mui/icons-material';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import Discord from 'mdi-material-ui/Discord';
 import { Collapse, Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { AppContext } from 'hooks/appcontext';
+import DiceIcon from 'mdi-material-ui/Dice6';
+import Discord from 'mdi-material-ui/Discord';
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Dropdown } from './dropdown';
@@ -33,6 +34,12 @@ export function Appdrawer() {
       name: 'Home',
       icon: <Home />,
       to: '/'
+    },
+    {
+      id: 'games',
+      name: 'Games',
+      icon: <DiceIcon />,
+      to: '/games'
     },
     {
       id: 'divider'
