@@ -42,10 +42,10 @@ export default function Home() {
                     flexDirection="row"
                     alignItems="center"
                     justifyContent="center"
-                    sx={{ background: 'rgba(0,0,0,0.9)', px: 2, py: 1 }}
+                    sx={{ background: card.color + 'EE', px: 2, py: 1 }}
                   >
                     <Stack>
-                      <Typography variant="h4" component="div">
+                      <Typography variant="h5" component="div" fontWeight='bold' gutterBottom>
                         {card.name}
                       </Typography>
                       <Typography align="left">{card.text}</Typography>
