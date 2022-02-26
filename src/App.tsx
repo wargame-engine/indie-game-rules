@@ -67,7 +67,6 @@ function App() {
       secondary: userSecondaryColor
     },
     typography: {
-      fontSize: 12,
       fontFamily: 'Noto Sans JP',
       h1: {
         fontSize: '4rem',
