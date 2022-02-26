@@ -3,11 +3,9 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import React from 'react';
-import { useNavigate } from "react-router-dom";
 import { GAMES } from 'utils/constants';
 
 export default function Home() {
-  const navigate = useNavigate();
   return (
     <Container sx={{ mt: 2 }}>
       <Grid
@@ -22,9 +20,7 @@ export default function Home() {
             <Card>
               <CardActionArea
                 onClick={() =>
-                  card.toAbs
-                    ? window.open(card.toAbs, "_blank")
-                    : navigate(card.to ?? '')
+                  window.location.href = card.to || card.toAbs
                 }
               >
                 <CardContent

@@ -1,15 +1,14 @@
-import NewsIcon from '@mui/icons-material/Newspaper';
 import { Box, CardActionArea, Container, Grid, Stack } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import logo from 'assets/images/logo_large.png';
 import splash from 'assets/images/splash.png';
+import { Patreon } from 'mdi-material-ui';
 import DiceIcon from 'mdi-material-ui/Dice6';
 import Discord from 'mdi-material-ui/Discord';
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import { colors } from 'utils/colors';
 
 type CardType = {
   name: string,
@@ -17,7 +16,6 @@ type CardType = {
   text: string,
   to?: string,
   toAbs?: string,
-  color: any,
   disabled?: boolean
 };
 
@@ -26,26 +24,22 @@ export default function Home() {
   const iconSize = '70px';
   const CARDS: Array<CardType> = [
     {
-      name: "News",
-      icon: <NewsIcon style={{ fontSize: iconSize }} />,
-      text: "View updates and information about Indie Game Rules",
-      to: "/news",
-      color: colors.brown.import[500],
-      disabled: true
-    },
-    {
       name: "Games",
       icon: <DiceIcon style={{ fontSize: iconSize }} />,
       text: "Browse our published games and give them a try.",
-      to: "/games",
-      color: colors.brown.import[500],
+      to: "/games"
     },
     {
       name: "Community",
       icon: <Discord style={{ fontSize: iconSize }} />,
       text: "Join the community to discuss and contribute to our games.",
-      toAbs: "https://discord.com/invite/M9sets4",
-      color: colors.brown.import[500],
+      toAbs: "https://discord.com/invite/M9sets4"
+    },
+    {
+      name: 'Donate',
+      icon: <Patreon style={{ fontSize: iconSize }} />,
+      text: "Support further development of the game.",
+      toAbs: 'https://www.patreon.com/indiegamerules'
     }
   ];
   return (
